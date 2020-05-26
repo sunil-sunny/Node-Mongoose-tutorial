@@ -36,3 +36,12 @@
   font-weight: bold;
   border-radius: 10px;
 }
+
+.align_centre {
+  width:800px;
+  margin:0 auto;
+}
+
+.text_align_centre{
+  text-align: center;
+}

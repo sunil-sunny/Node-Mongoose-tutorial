@@ -29,7 +29,9 @@ export class CardsComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    this.listArray = ['hello', 'goodbye', 'greeting', 'congratulations']
+    // cards graphic symbol reference: https://www.theatlantic.com/technology/archive/2017/08/the-lost-origins-of-playing-card-symbols/537786/
+    this.listArray = ['clubs (♣)', 'diamonds (♦)', 'hearts (♥)','spades (♠)']
+    
     this.filteredOptions = this.myControl.valueChanges
       .pipe(
         startWith(''),
@@ -44,14 +46,13 @@ export class CardsComponent implements OnInit {
 
   loadData()
   {
-    this.titleArray = ['title1', 'title2', 'title3', 'title4'];
+    this.titleArray = ['Card 1', 'Card 2', 'Card 3', 'Card 4'];
     this.repeatData = this.listArray.map((value, index) => {
       return {
         item: value,
         title: this.titleArray[index]
       }
-    });
-    console.log(this.repeatData);   
+    }); 
   }
 
 }
