@@ -1,5 +1,5 @@
 <div>
-    <form class="example-form">
+    <form class="example-form" (ngSubmit)="onSubmit()">
         <mat-form-field class="example-full-width">
             <input matInput type="text" placeholder="Pick one" aria-label="Number" [formControl]="myControl"
                 [matAutocomplete]="auto" [ngModel]="searchTerm" (ngModelChange)="onChange($event)">
@@ -8,13 +8,18 @@
                     {{option}}
                 </mat-option>
             </mat-autocomplete>
+            <input id="submitbutton" type="submit" value="Submit">
         </mat-form-field>
+
     </form>
-    <mat-card *ngFor="let data of repeatData">
+    <mat-card id="card" *ngFor="let data of repeatData">
+        <br>
         <mat-card-header>
             <mat-card-title>{{ data.title }}</mat-card-title>
             <mat-card-subtitle> {{ data.item }} </mat-card-subtitle>
         </mat-card-header>
+        <br>
+        &nbsp;
     </mat-card>
 
 </div>
