@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { FormControl } from '@angular/forms';
+import { Observable } from 'rxjs';
+import { map, startWith } from 'rxjs/operators';
 
 @Component({
   selector: 'app-cards',
@@ -9,11 +12,14 @@ export class CardsComponent implements OnInit {
   listArray: any = [];
   titleArray: any = [];
   repeatData: any = [];
+  options: string[] = ['One', 'Two', 'Three'];
+  myControl = new FormControl();
+  filteredOptions: Observable<string[]>;
 
   constructor() { }
 
   ngOnInit(): void {
-    this.listArray = ['item1', 'item2', 'item3', 'item4']
+    this.listArray = ['hello', 'goodbye', 'greeting', 'congratulations']
     this.titleArray = ['title1', 'title2', 'title3', 'title4'];
     this.repeatData = this.listArray.map((value, index) => {
       return {
@@ -21,8 +27,19 @@ export class CardsComponent implements OnInit {
         title: this.titleArray[index]
       }
     });
+    this.filteredOptions = this.myControl.valueChanges
+      .pipe(
+        startWith(''),
+        map(value => this._filter(value))
+      );
 
 
+  }
+
+  private _filter(value: string): string[] {
+    const filterValue = value.toLowerCase();
+
+    return this.listArray.filter(option => option.toLowerCase().includes(filterValue));
   }
 
 }
