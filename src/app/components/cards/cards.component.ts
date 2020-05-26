@@ -9,9 +9,9 @@ import { map, startWith } from 'rxjs/operators';
   styleUrls: ['./cards.component.css']
 })
 export class CardsComponent implements OnInit {
-  listArray: any = [];
-  titleArray: any = [];
-  repeatData: any = [];
+  title: string = '';
+  cardData: any = [];
+  filteredCardData: any = [];
   options: string[] = ['One', 'Two', 'Three'];
   myControl = new FormControl();
   filteredOptions: Observable<string[]>;
@@ -19,14 +19,25 @@ export class CardsComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-    this.listArray = ['hello', 'goodbye', 'greeting', 'congratulations']
-    this.titleArray = ['title1', 'title2', 'title3', 'title4'];
-    this.repeatData = this.listArray.map((value, index) => {
-      return {
-        item: value,
-        title: this.titleArray[index]
-      }
-    });
+    this.cardData = [
+      {
+        item: 'hello',
+        title: 'Title one'
+      },
+      {
+        item: 'goodbye',
+        title: 'Title two'
+      },
+      {
+        item: 'greeting',
+        title: 'Title three'
+      },
+      {
+        item: 'item',
+        title: 'Title four'
+      },
+    ]
+    this.filteredCardData = this.cardData
     this.filteredOptions = this.myControl.valueChanges
       .pipe(
         startWith(''),
@@ -39,7 +50,15 @@ export class CardsComponent implements OnInit {
   private _filter(value: string): string[] {
     const filterValue = value.toLowerCase();
 
-    return this.listArray.filter(option => option.toLowerCase().includes(filterValue));
+    var x = this.cardData.filter(option => option.title.toLowerCase().includes(filterValue));
+    return x.map(card => card.title)
+
+  }
+
+  onSubmit = () => {
+
+    this.filteredCardData = this.cardData.filter(option => option.title.toLowerCase().includes(this.title.toLowerCase()))
+
   }
 
 }
