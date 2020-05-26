@@ -20,15 +20,16 @@ export class CardsComponent implements OnInit {
 
   getSelectedElementId(id){
     console.log(id);
+    this.loadData();
     this.repeatData = this.repeatData.filter(option => option.item.toLowerCase().includes(id));
 }
 
   onChange(newValue) {
-    this.loadData();
+    
   }
 
   ngOnInit(): void {
-    this.loadData(); 
+    this.listArray = ['hello', 'goodbye', 'greeting', 'congratulations']
     this.filteredOptions = this.myControl.valueChanges
       .pipe(
         startWith(''),
@@ -42,7 +43,6 @@ export class CardsComponent implements OnInit {
 
   loadData()
   {
-    this.listArray = ['hello', 'goodbye', 'greeting', 'congratulations']
     this.titleArray = ['title1', 'title2', 'title3', 'title4'];
     this.repeatData = this.listArray.map((value, index) => {
       return {
