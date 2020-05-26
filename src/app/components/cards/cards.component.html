@@ -1,22 +1,26 @@
 <div>
     <form class="example-form" (ngSubmit)="onSubmit()">
         <mat-form-field class="example-full-width">
-            <input matInput type="text" name="title" [(ngModel)]='title' placeholder="Pick one" aria-label="Number"
+            <button id="pickbutton"><b>Pick One</b></button>
+            <input matInput type="text" name="title" [(ngModel)]='title'  aria-label="Number"
                 [formControl]="myControl" [matAutocomplete]="auto">
             <mat-autocomplete #auto="matAutocomplete">
                 <mat-option *ngFor="let option of filteredOptions | async" [value]="option">
                     {{option}}
                 </mat-option>
             </mat-autocomplete>
-            <input type="submit" value="Submit">
+            <input id="submitbutton" type="submit" value="Submit">
         </mat-form-field>
 
     </form>
-    <mat-card *ngFor="let data of filteredCardData">
+    <mat-card id="card" *ngFor="let data of filteredCardData">
+        <br>
         <mat-card-header>
             <mat-card-title>{{ data.title }}</mat-card-title>
             <mat-card-subtitle> {{ data.item }} </mat-card-subtitle>
         </mat-card-header>
+        <br>
+        &nbsp;
     </mat-card>
 
 </div>

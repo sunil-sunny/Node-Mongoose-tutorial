@@ -7,3 +7,32 @@
 .example-full-width {
   width: 100%;
 }
+
+#pickbutton{
+
+  height: 30px;
+  width: 200px;
+  background: white;
+  border: 2px solid cadetblue;
+  font-size: large;
+  cursor: pointer;
+  color: cadetblue;
+  border-radius: 10px;
+}
+
+#card{
+  border: 2px solid cadetblue;
+  background: whitesmoke;
+}
+
+#submitbutton{
+  height: 30px;
+  cursor: pointer;
+  width: 200px;
+  color: cadetblue;
+  font-size: large;
+  background: white;
+  border: 2px solid cadetblue;
+  font-weight: bold;
+  border-radius: 10px;
+}
