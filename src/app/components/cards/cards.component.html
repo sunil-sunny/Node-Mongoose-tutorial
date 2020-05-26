@@ -1,6 +1,9 @@
-
 <div>
-    <mat-card *ngFor="let item of listArray">
-        {{ item }}
+    <mat-card *ngFor="let data of repeatData">
+        <mat-card-header>
+            <mat-card-title>{{ data.title }}</mat-card-title>
+            <mat-card-subtitle> {{ data.item }} </mat-card-subtitle>
+        </mat-card-header>
     </mat-card>
+
 </div>
