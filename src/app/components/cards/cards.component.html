@@ -1,11 +1,10 @@
 <div>
     <form class="example-form" (ngSubmit)="onSubmit()">
         <mat-form-field class="example-full-width">
-            <button id="pickbutton"><b>Pick One</b></button>
-            <input matInput type="text" name="title" [(ngModel)]='title'  aria-label="Number"
-                [formControl]="myControl" [matAutocomplete]="auto">
+            <input matInput type="text" placeholder="Pick one" aria-label="Number" [formControl]="myControl"
+                [matAutocomplete]="auto" [ngModel]="searchTerm" (ngModelChange)="onChange($event)">
             <mat-autocomplete #auto="matAutocomplete">
-                <mat-option *ngFor="let option of filteredOptions | async" [value]="option">
+                <mat-option *ngFor="let option of filteredOptions | async" [value]="option" (click)="getSelectedElementId(option)">
                     {{option}}
                 </mat-option>
             </mat-autocomplete>
@@ -13,7 +12,7 @@
         </mat-form-field>
 
     </form>
-    <mat-card id="card" *ngFor="let data of filteredCardData">
+    <mat-card id="card" *ngFor="let data of repeatData">
         <br>
         <mat-card-header>
             <mat-card-title>{{ data.title }}</mat-card-title>

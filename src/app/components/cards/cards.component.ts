@@ -9,56 +9,49 @@ import { map, startWith } from 'rxjs/operators';
   styleUrls: ['./cards.component.css']
 })
 export class CardsComponent implements OnInit {
-  title: string = '';
-  cardData: any = [];
-  filteredCardData: any = [];
-  options: string[] = ['One', 'Two', 'Three'];
+  private listArray: any = [];
+  private titleArray: any = [];
+  repeatData: any = [];
   myControl = new FormControl();
   filteredOptions: Observable<string[]>;
-
+  searchTerm: any;
+  
   constructor() { }
 
+  getSelectedElementId(id){
+    console.log(id);
+    this.loadData();
+    this.repeatData = this.repeatData.filter(option => option.item.toLowerCase().includes(id));
+}
+
+  onChange(newValue) {
+    
+  }
+
   ngOnInit(): void {
-    this.cardData = [
-      {
-        item: 'hello',
-        title: 'Title one'
-      },
-      {
-        item: 'goodbye',
-        title: 'Title two'
-      },
-      {
-        item: 'greeting',
-        title: 'Title three'
-      },
-      {
-        item: 'item',
-        title: 'Title four'
-      },
-    ]
-    this.filteredCardData = this.cardData
+    this.listArray = ['hello', 'goodbye', 'greeting', 'congratulations']
     this.filteredOptions = this.myControl.valueChanges
       .pipe(
         startWith(''),
         map(value => this._filter(value))
       );
-
-
   }
-
   private _filter(value: string): string[] {
     const filterValue = value.toLowerCase();
-
-    var x = this.cardData.filter(option => option.title.toLowerCase().includes(filterValue));
-    return x.map(card => card.title)
+    return this.listArray.filter(option => option.toLowerCase().includes(filterValue));
 
   }
 
-  onSubmit = () => {
-
-    this.filteredCardData = this.cardData.filter(option => option.title.toLowerCase().includes(this.title.toLowerCase()))
-
+  loadData()
+  {
+    this.titleArray = ['title1', 'title2', 'title3', 'title4'];
+    this.repeatData = this.listArray.map((value, index) => {
+      return {
+        item: value,
+        title: this.titleArray[index]
+      }
+    });
+    console.log(this.repeatData);   
   }
 
 }
