@@ -17,15 +17,17 @@ export class CardsComponent implements OnInit {
   myControl = new FormControl();
   filteredOptions: Observable<string[]>;
   searchTerm: any;
+  movie_ID: number;
 
   constructor(private moviesService: MoviesService,private router: Router) { }
 
   getSelectedElementId(id) {
     console.log(id);
     this.moviesService.getMovies(id).subscribe((data) => {
-      var len = (Object.keys(data).length);
+      var len = (Object.keys(data).length);      
       //var count = Math.min(len, 5);
       for (var i = 0; i < len; i++) {
+        this.movie_ID = data[i].show_id;
         //this.listArray.push(data[i].title);
         this.repeatData.push({
           item: data[i].description,
@@ -63,9 +65,7 @@ export class CardsComponent implements OnInit {
   }
 
   getMovieById(){
-
-    this.router.navigate(['/movie']);
+    this.router.navigate(['/movie', this.movie_ID]);
   }
-
 
 }

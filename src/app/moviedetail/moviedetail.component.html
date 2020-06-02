@@ -1,1 +1,37 @@
-<p>moviedetail works!</p>
+<div>
+    <div *ngFor="let data of movieData">
+        <div> 
+            Show ID: {{ data.show_id }}
+        </div>
+        <div>
+            Type: {{ data.type }}
+        </div>
+        <div>
+            Title: {{ data.title }}
+        </div>
+        <div>
+            Cast: {{ data.cast }}
+        </div>        
+        <div>
+            Country: {{ data.country }}
+        </div>
+        <div>
+            Date Added: {{ data.date_added }}
+        </div>
+        <div>
+            Release Year: {{ data.release_year }}
+        </div>
+        <div>
+            Rating: {{ data.rating }}
+        </div>
+        <div>
+            Duration: {{ data.duration }}
+        </div>
+        <div>
+            Listed In: {{ data.listed_in }}
+        </div>
+        <div>
+            Description: {{ data.description }}
+        </div>
+    </div>
+</div>
