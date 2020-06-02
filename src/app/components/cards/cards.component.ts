@@ -3,6 +3,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormControl } from '@angular/forms';
 import { Observable } from 'rxjs';
 import { map, startWith } from 'rxjs/operators';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-cards',
@@ -17,11 +18,21 @@ export class CardsComponent implements OnInit {
   filteredOptions: Observable<string[]>;
   searchTerm: any;
 
-  constructor(private moviesService: MoviesService) { }
+  constructor(private moviesService: MoviesService,private router: Router) { }
 
   getSelectedElementId(id) {
     console.log(id);
-    this.repeatData = this.repeatData.filter(option => option.item.toLowerCase().includes(id));
+    this.moviesService.getMovies(id).subscribe((data) => {
+      var len = (Object.keys(data).length);
+      //var count = Math.min(len, 5);
+      for (var i = 0; i < len; i++) {
+        //this.listArray.push(data[i].title);
+        this.repeatData.push({
+          item: data[i].description,
+          title: data[i].title
+        })
+      }
+    });
   }
 
   onChange(newValue) {
@@ -37,23 +48,23 @@ export class CardsComponent implements OnInit {
       );
   }
   private _filter(value: string): string[] {
-    if (value === '') return [];
+
     const filterValue = value.toLowerCase();
     this.listArray = [];
     this.repeatData = [];
     this.moviesService.getMovies(value).subscribe((data) => {
       var len = (Object.keys(data).length);
-      var count = Math.min(len, 5);
-      for (var i = 0; i < count; i++) {
+      for (var i = 0; i < len; i++) {
         this.listArray.push(data[i].title);
-        this.repeatData.push({
-          item: data[i].description,
-          title: data[i].title
-        })
       }
     });
     return this.listArray;
 
+  }
+
+  getMovieById(){
+
+    this.router.navigate(['/movie']);
   }
 
 

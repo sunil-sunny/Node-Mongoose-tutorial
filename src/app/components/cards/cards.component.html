@@ -1,3 +1,4 @@
+
 <div class="align_centre">
     <form class="example-form">
         <div class="align_centre">
@@ -5,7 +6,7 @@
                 <div class="text_align_centre">
                     <input matInput type="text" placeholder="Please pick a card"
                     aria-label="Number" [formControl]="myControl"
-                    [matAutocomplete]="auto" [ngModel]="searchTerm" 
+                    [matAutocomplete]="auto" [ngModel]="searchTerm"
                     (ngModelChange)="onChange($event)">
                 </div>
                 <mat-autocomplete #auto="matAutocomplete">
@@ -18,7 +19,7 @@
         </div>
 
     </form>
-    <mat-card id="card" *ngFor="let data of repeatData">
+    <mat-card id="card" *ngFor="let data of repeatData" (click)="getMovieById()">
         <br>
         <mat-card-header>
             <mat-card-title>{{ data.title }}</mat-card-title>

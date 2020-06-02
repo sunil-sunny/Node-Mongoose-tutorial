@@ -11,7 +11,10 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms'
-import { HttpClient, HttpClientModule } from '@angular/common/http'
+import { HttpClient, HttpClientModule } from '@angular/common/http';
+import { MoviedetailComponent } from './moviedetail/moviedetail.component'
+import { RouterModule } from '@angular/router';
+import { appRoutes } from './routes';
 
 
 
@@ -19,7 +22,8 @@ import { HttpClient, HttpClientModule } from '@angular/common/http'
 @NgModule({
   declarations: [
     AppComponent,
-    CardsComponent
+    CardsComponent,
+    MoviedetailComponent
   ],
   imports: [
     BrowserModule,
@@ -31,7 +35,8 @@ import { HttpClient, HttpClientModule } from '@angular/common/http'
     FormsModule,
     ReactiveFormsModule,
     BrowserAnimationsModule,
-    HttpClientModule
+    HttpClientModule,
+    RouterModule.forRoot(appRoutes)
   ],
   providers: [MoviesService],
   bootstrap: [AppComponent]

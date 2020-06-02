@@ -8,7 +8,7 @@ export class MoviesService {
 
   constructor(private http: HttpClient) { }
 
-  getMovies(movie: String) {
-    return this.http.get("https://api-tutorial4.herokuapp.com/movies?title_like=" + movie);
+  getMovies(movie:String) {
+    return this.http.get("https://api-tutorial4.herokuapp.com/movies?title_like="+movie);
   }
 }
