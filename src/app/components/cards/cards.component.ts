@@ -30,6 +30,7 @@ export class CardsComponent implements OnInit {
         this.movie_ID = data[i].show_id;
         //this.listArray.push(data[i].title);
         this.repeatData.push({
+          id:data[i].show_id,
           item: data[i].description,
           title: data[i].title
         })

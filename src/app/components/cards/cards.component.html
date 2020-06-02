@@ -22,7 +22,7 @@
     <br>
     <br>
     <br>
-    <mat-card id="card" *ngFor="let data of repeatData" (click)="getMovieById()">
+    <mat-card id="card" *ngFor="let data of repeatData" [routerLink]="['/movie',data.id]">
         <br>
         <mat-card-header>
             <mat-card-title>{{ data.title }}</mat-card-title>
