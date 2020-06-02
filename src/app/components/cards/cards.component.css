@@ -21,7 +21,7 @@
 }
 
 #card{
-  border: 2px solid cadetblue;
+  border: 4px solid cadetblue;
   background: whitesmoke;
 }
 
@@ -44,4 +44,41 @@
 
 .text_align_centre{
   text-align: center;
+}
+
+input:not([type]), input[type=text]:not(.browser-default), input[type=password]:not(.browser-default), input[type=email]:not(.browser-default), input[type=url]:not(.browser-default), input[type=time]:not(.browser-default), input[type=date]:not(.browser-default), input[type=datetime]:not(.browser-default), input[type=datetime-local]:not(.browser-default), input[type=tel]:not(.browser-default), input[type=number]:not(.browser-default), input[type=search]:not(.browser-default), textarea.materialize-textarea {
+  background-color: transparent;
+  border: none;
+ 
+  border-radius: 0;
+
+  height: 3rem;
+  width: 100%;
+  font-size: 16px;
+  font-weight: 500;
+  font-size: large;
+ 
+}
+::-webkit-input-placeholder{
+  color: pink;
+  font-size: 17px;
+}
+
+:-ms-input-placeholder { /* IE 10+ */
+  color: pink;
+
+
+}
+
+::-moz-placeholder { /* Firefox 19+ */
+  color: pink;
+}
+
+::-mat-form-field-hide-placeholder{
+color: pink;
+}
+
+.mat-form-field-hide-placeholder{
+  font-size: large;
+  color: cadetblue;
 }
