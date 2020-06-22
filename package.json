@@ -16,7 +16,7 @@
     "mongoose": "^5.9.19",
     "nodemon": "^2.0.4"
   },
-"engines": {
-    "node": "12.x"
+  "engines": {
+    "node": "13.11.0"
   }
 }
