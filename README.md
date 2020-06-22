@@ -39,12 +39,14 @@ This project is about creating web API using Node and Express.
 
 * https://tutorial-group12.herokuapp.com/user/addUser - This is a post endpoint which will add the user upon sending the details in request header. Below is the format of request header needed to send for adding user.
 
+```
 {
 	"userId" : "754",
 	"firstName": "James",
 	"lastName" : "Anderson",
 	"email": "James@dal.ca"
 }
+```
 
 
 
