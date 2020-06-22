@@ -29,7 +29,12 @@ This project is about creating web API using Node and Express.
 
 ### View all Users
 
-* [https://tutorial-group12.herokuapp.com/user/allUsers] - This is get endpoint which will return all the users in JSON format.
+* https://tutorial-group12.herokuapp.com/user/allUsers - This is get endpoint which will return all the users in JSON format.
+
+### View particular User
+
+* https://tutorial-group12.herokuapp.com/user/allUsers - This is a get endpoint which will return all the users in JSON format.
+* https://tutorial-group12.herokuapp.com/user/getUser/5eefe83c9ec2730cb451a990 - This is a get endpoint which will return single user upon sending the id in request param as shown in URL.
 
 
 
