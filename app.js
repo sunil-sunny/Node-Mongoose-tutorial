@@ -4,7 +4,7 @@ const mongoose = require('mongoose');
 require('dotenv/config');
 const userRoute = require('./Routes/userRoute');
 const bodyParser = require('body-parser');
-let port = process.env.port || 3000;
+
 app.use(bodyParser.json());
 
 app.use('/user', userRoute);
@@ -24,4 +24,9 @@ mongoose.connect('mongodb+srv://avinash:avinash123@healthhub.mff3o.mongodb.net/T
     }
 });
 
-app.listen(port);
+let port = process.env.PORT || 3000;
+
+app.listen(port, () => {
+    console.log(`Server listening on port ${port}`);
+
+});
