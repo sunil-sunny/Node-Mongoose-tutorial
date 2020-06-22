@@ -25,6 +25,13 @@ This project is about creating web API using Node and Express.
 * [Express](https://expressjs.com/)
 * [Mongoose](https://mongoosejs.com/)
 
+## End points
+
+### View all Users
+
+* [https://tutorial-group12.herokuapp.com/user/allUsers] - This is get endpoint which will return all the users in JSON format.
+
+
 
 
 ### Directory Structure
