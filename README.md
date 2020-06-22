@@ -9,7 +9,7 @@ This project is about creating web API using Node and Express.
 * [Avinash Gazula](av530575@dal.ca) 
 * [Sai Sunil Menta](ss734478@dal.ca)
 
-### Installing
+## Installing
 
 * Clone the repository by using the provided GitHub link
 * Open the terminal and go to the directory where package.json is located
@@ -19,7 +19,7 @@ This project is about creating web API using Node and Express.
 	 `npm start`
 
 
-### Built With
+## Built With
 
 * [Node](https://nodejs.org/en/)
 * [Express](https://expressjs.com/)
@@ -33,13 +33,23 @@ This project is about creating web API using Node and Express.
 
 ### View particular User
 
-* https://tutorial-group12.herokuapp.com/user/allUsers - This is a get endpoint which will return all the users in JSON format.
 * https://tutorial-group12.herokuapp.com/user/getUser/5eefe83c9ec2730cb451a990 - This is a get endpoint which will return single user upon sending the id in request param as shown in URL.
 
+### Add User
+
+* https://tutorial-group12.herokuapp.com/user/addUser - This is a post endpoint which will add the user upon sending the details in request header. Below is the format of request header needed to send for adding user.
+
+{
+	"userId" : "754",
+	"firstName": "James",
+	"lastName" : "Anderson",
+	"email": "James@dal.ca"
+}
 
 
 
-### Directory Structure
+
+## Directory Structure
 
 `models` - This folder contains the user model.
 
