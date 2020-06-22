@@ -1,6 +1,6 @@
 # Group12-tutorial
 
-This project is about creating web API using Node and Express.
+This tutorial is about creating web API using Node and Express. This application access Mongo DB in backend.
 * *Date Created*: 21 Jun 2020
 * *Last Modification Date*: 22 Jun 2020
 
@@ -8,6 +8,11 @@ This project is about creating web API using Node and Express.
 
 * [Avinash Gazula](av530575@dal.ca) 
 * [Sai Sunil Menta](ss734478@dal.ca)
+
+## Contribution
+
+* [Avinash Gazula](av530575@dal.ca) - Opened Mongo DB Cloud instance using atlas and implemeted Continous deployment to heroku app. 
+* [Sai Sunil Menta](ss734478@dal.ca) - Developed all four APIs to view, add and modify user.
 
 ## Installing
 
