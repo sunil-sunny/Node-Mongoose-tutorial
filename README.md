@@ -48,8 +48,18 @@ This project is about creating web API using Node and Express.
 }
 ```
 
+### Modify User
 
+* https://tutorial-group12.herokuapp.com/user/modifyUser/5ef0dc0aa95a8f0017951432 - This is a put endpoint which will modify the existing upon sending the details in request header. The id of the user should also be sent in request paramas as shown in URL. Below is the format of request header needed to send for adding user.
 
+```
+{
+	"userId" : "674",
+	"firstName": "Brett",
+	"lastName" : "Lee",
+	"email": "Lee@dal.ca"
+}
+```
 
 ## Directory Structure
 
