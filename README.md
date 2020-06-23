@@ -20,7 +20,7 @@ This tutorial is about creating web API using Node and Express. This application
 * [Harshit Trivedi](harshit.trivedi@dal.ca) - Implemented GET request to return all users.
 * [Rudra Makwana](rudra.makwana@dal.ca) - Implemented an API to add a user.
 * [Swarali Ghalwadkar](sw258541@dal.ca) - Added comments
-* [Vidip Malhotra](vidip.malhotra@dal.ca) - Changes in UserId and Message in Add User API. 
+* [Vidip Malhotra](vidip.malhotra@dal.ca) - UserId and Return Object Implementation in Add User and Modify User API. 
 
 ## Installing
 
