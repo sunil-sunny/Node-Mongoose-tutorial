@@ -43,7 +43,7 @@ router.post('/addUser', (req, res) => {
     console.log(req.body);
     user.save().then(
         data => {
-            ret = {"message":"User Added Successfully",Db_id:data._id,UserId:data.userId}
+            ret = {"message":"User Added Successfully",Db_id:data._id}
             res.json(ret);
         }
     )
