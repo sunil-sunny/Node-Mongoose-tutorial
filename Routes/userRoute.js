@@ -2,6 +2,7 @@ const express = require('express');
 const router = express.Router();
 const userModel = require('../models/userModel');
 
+var allusers = []
 
 //get all the user
 router.get('/allUsers', async (req, res) => {
@@ -33,15 +34,17 @@ router.get('/getUser/:userId', (req, res) => {
 
 //Add user
 router.post('/addUser', (req, res) => {
+    console.log("adduser");
     const user = new userModel({
-        userId: req.body.userId,
         firstName: req.body.firstName,
         lastName: req.body.lastName,
         email: req.body.email
     });
+    console.log(req.body);
     user.save().then(
         data => {
-            res.json(data);
+            ret = {"message":"User Added Successfully",Db_id:data._id,UserId:data.userId}
+            res.json(ret);
         }
     )
         .catch(err => {
@@ -55,13 +58,13 @@ router.put('/modifyUser/:userId', (req, res) => {
 
     userModel.updateOne({ _id: req.params.userId }, {
         $set: {
-            userId: req.body.userId,
             firstName: req.body.firstName,
             lastName: req.body.lastName,
             email: req.body.email
         }
     }).then(
         data => {
+            data.message="User Updated Successfully";
             res.json(data);
         }
     )

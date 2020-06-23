@@ -11,6 +11,7 @@ This tutorial is about creating web API using Node and Express. This application
 * [Harshit Trivedi](harshit.trivedi@dal.ca)
 * [Rudra Makwana](rudra.makwana@dal.ca)
 * [Swarali Ghalwadkar](sw258541.com)
+# [Vidip Malhotra] (vidip.malhotra@dal.ca)
 
 ## Contribution
 
@@ -19,6 +20,7 @@ This tutorial is about creating web API using Node and Express. This application
 * [Harshit Trivedi](harshit.trivedi@dal.ca) - Implemented GET request to return all users.
 * [Rudra Makwana](rudra.makwana@dal.ca) - Implemented an API to add a user.
 * [Swarali Ghalwadkar](sw258541@dal.ca) - Added comments
+* [Vidip Malhotra](vidip.malhotra@dal.ca) - Changes in UserId and Message in Add User API. 
 
 ## Installing
 
@@ -44,7 +46,19 @@ This tutorial is about creating web API using Node and Express. This application
 
 ### View particular User
 
-* https://tutorial-group12.herokuapp.com/user/getUser/5eefe83c9ec2730cb451a990 - This is a get endpoint which will return single user upon sending the id in request param as shown in URL.
+* https://tutorial-group12.herokuapp.com/user/getUser/5ef233eb8887dba5eb9a7fb7 - This is a get endpoint which will return single user upon sending the id in request param as shown in URL.
+
+Response:
+
+```
+{
+    "_id": "5ef233eb8887dba5eb9a7fb7",
+    "firstName": "Group12-User",
+    "lastName": "userlastname",
+    "email": "group12@dal.ca",
+    "__v": 0
+}
+```
 
 ### Add User
 
@@ -52,10 +66,18 @@ This tutorial is about creating web API using Node and Express. This application
 
 ```
 {
-	"userId" : "754",
-	"firstName": "James",
-	"lastName" : "Anderson",
-	"email": "James@dal.ca"
+	"firstName": "Group12-User",
+	"lastName" : "userlastname",
+	"email": "group12@dal.ca"
+}
+```
+
+Response:
+
+```
+{
+    "message": "User Added Successfully",
+    "Db_id": "5ef233eb8887dba5eb9a7fb7"
 }
 ```
 
@@ -65,10 +87,32 @@ This tutorial is about creating web API using Node and Express. This application
 
 ```
 {
-	"userId" : "674",
-	"firstName": "Brett",
-	"lastName" : "Lee",
-	"email": "Lee@dal.ca"
+	"firstName": "Group12-NewUser",
+	"lastName" : "USerlastname",
+	"email": "newgroupemail@dal.ca"
+}
+```
+Response:
+
+```
+{
+    "n": 1,
+    "nModified": 0,
+    "opTime": {
+        "ts": "6841588667203452929",
+        "t": 5
+    },
+    "electionId": "7fffffff0000000000000005",
+    "ok": 1,
+    "$clusterTime": {
+        "clusterTime": "6841588667203452929",
+        "signature": {
+            "hash": "EVzaYdneHmdZ60p8csBii059Fpg=",
+            "keyId": "6840667615761793027"
+        }
+    },
+    "operationTime": "6841588667203452929",
+    "message": "User Updated Successfully"
 }
 ```
 
