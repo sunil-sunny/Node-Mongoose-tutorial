@@ -46,7 +46,7 @@ This tutorial is about creating web API using Node and Express. This application
 
 ### View particular User
 
-* https://tutorial-group12.herokuapp.com/user/getUser/5ef233eb8887dba5eb9a7fb7 - This is a get endpoint which will return single user upon sending the id in request param as shown in URL.
+* https://tutorial-group12.herokuapp.com/user/getUser/5ef247d5e8383d00174ddfaf - This is a get endpoint which will return single user upon sending the id in request param as shown in URL.
 
 Response:
 
@@ -77,19 +77,19 @@ Response:
 ```
 {
     "message": "User Added Successfully",
-    "Db_id": "5ef233eb8887dba5eb9a7fb7"
+    "Db_id": "5ef247d5e8383d00174ddfaf"
 }
 ```
 
 ### Modify User
 
-* https://tutorial-group12.herokuapp.com/user/modifyUser/5ef0dc0aa95a8f0017951432 - This is a put endpoint which will modify the existing upon sending the details in the request header. The id of the user should also be sent in request params as shown in URL. Below is the format of the request header needed to send for adding the user.
+* https://tutorial-group12.herokuapp.com/user/modifyUser/5ef247d5e8383d00174ddfaf - This is a put endpoint which will modify the existing upon sending the details in the request header. The id of the user should also be sent in request params as shown in URL. Below is the format of the request header needed to send for adding the user.
 
 ```
 {
-	"firstName": "Group12-NewUser",
-	"lastName" : "USerlastname",
-	"email": "newgroupemail@dal.ca"
+	"firstName": "Group12-User",
+	"lastName" : "modified last name",
+	"email": "group12@dal.ca"
 }
 ```
 Response:
@@ -97,21 +97,21 @@ Response:
 ```
 {
     "n": 1,
-    "nModified": 0,
+    "nModified": 1,
     "opTime": {
-        "ts": "6841588667203452929",
+        "ts": "6841610064730521601",
         "t": 5
     },
     "electionId": "7fffffff0000000000000005",
     "ok": 1,
     "$clusterTime": {
-        "clusterTime": "6841588667203452929",
+        "clusterTime": "6841610064730521601",
         "signature": {
-            "hash": "EVzaYdneHmdZ60p8csBii059Fpg=",
+            "hash": "TLuZlC1NF+5apnZYxDF8DhExoxw=",
             "keyId": "6840667615761793027"
         }
     },
-    "operationTime": "6841588667203452929",
+    "operationTime": "6841610064730521601",
     "message": "User Updated Successfully"
 }
 ```
