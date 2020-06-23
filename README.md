@@ -11,7 +11,7 @@ This tutorial is about creating web API using Node and Express. This application
 * [Harshit Trivedi](harshit.trivedi@dal.ca)
 * [Rudra Makwana](rudra.makwana@dal.ca)
 * [Swarali Ghalwadkar](sw258541.com)
-# [Vidip Malhotra] (vidip.malhotra@dal.ca)
+* [Vidip Malhotra] (vidip.malhotra@dal.ca)
 
 ## Contribution
 
