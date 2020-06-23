@@ -12,7 +12,7 @@ This tutorial is about creating web API using Node and Express. This application
 ## Contribution
 
 * [Avinash Gazula](av530575@dal.ca) - Opened Mongo DB Cloud instance using Mongo atlas and implemented Continous deployment to the Heroku app. 
-* [Sai Sunil Menta](ss734478@dal.ca) - Developed all four APIs to view, add and modify user.
+* [Sai Sunil Menta](ss734478@dal.ca) - Developed API to modify user.
 
 ## Installing
 
