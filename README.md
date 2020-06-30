@@ -135,3 +135,6 @@ https://tutorial-group12.herokuapp.com/
 
 https://github.com/sunil-sunny/Group12-tutorial
 
+## Note
+
+In tutorial 6, we are asked to create MongoDB cluster and integrate it with the node application. We have already completed this task in tutorial 5, so we are resubmitting it.
